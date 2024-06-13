@@ -30,3 +30,5 @@ print(p1.rooms)
 print(p1.availability)
 print(p1.status)
 print(p1.day)
+
+#second test comment for git changes
