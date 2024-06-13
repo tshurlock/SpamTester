@@ -22,6 +22,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="localValues.py" />
+    <Compile Include="proxies.py" />
+    <Compile Include="proxyGetter.py" />
     <Compile Include="personClass.py" />
     <Compile Include="detailsVar.py">
       <SubType>Code</SubType>
