@@ -16,6 +16,8 @@ class random_person():
         self.year = '2024'
 
 
+'''
+for testing, can be removed
 p1 = random_person()
 
 
@@ -29,6 +31,5 @@ print(p1.location)
 print(p1.rooms)
 print(p1.availability)
 print(p1.status)
-print(p1.day)
+print(p1.day)'''
 
-#second test comment for git changes

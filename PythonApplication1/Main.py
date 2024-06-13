@@ -7,6 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 import time
+import localValues
+import personClass
 
 
 
@@ -16,39 +18,41 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 driver = webdriver.Chrome(
-    service=  Service(chromedriverPath), 
+    service=  Service(localValues.chromedriverPath), 
     options=options,
 )
 
+p1 = personClass.random_person()
+print(p1)
+time.sleep(20)
 
+target = localValues.target
 
-ptp = target
+#Open target page
+driver.get(target)
 
-#Open parkrun page
-driver.get(ptp)
-
-first_name = driver.find_element(By.ID, 'input_12_1')  # Replace 'username' with the actual element ID
-first_name.send_keys('your_firstname')
-surname = driver.find_element(By.ID, 'input_12_2')  # Replace 'username' with the actual element ID
-surname.send_keys('chocolate')
+first_name = driver.find_element(By.ID, 'input_12_1')  
+first_name.send_keys(p1.first_name)
+surname = driver.find_element(By.ID, 'input_12_2')  
+surname.send_keys(p1.surname)
 tel_number = driver.find_element(By.ID, 'input_12_13')
-tel_number.send_keys('08001234')
+tel_number.send_keys(p1.tel_number)
 email = driver.find_element(By.ID, 'input_12_4')
-email.send_keys('example@aol.com')
+email.send_keys(p1.email)
 location= driver.find_element(By.ID, 'input_12_11')
-location.send_keys('Wordington')
+location.send_keys(p1.location)
 rooms = driver.find_element(By.ID, 'input_12_8')
-rooms.send_keys('3')
+rooms.send_keys(p1.rooms)
 availability = driver.find_element(By.ID, 'input_12_9')
-availability.send_keys('6 Months')
+availability.send_keys(p1.availability)
 status = driver.find_element(By.ID, 'input_12_7')
-status.send_keys('Homeowner')
+status.send_keys(p1.status)
 day = driver.find_element(By.ID, 'input_12_14_2')
-day.send_keys('01')
+day.send_keys(p1.day)
 month = driver.find_element(By.ID, 'input_12_14_1')
-month.send_keys('06')
+month.send_keys(p1.month)
 year = driver.find_element(By.ID, 'input_12_14_3')
-year.send_keys('2024')
+year.send_keys(p1.year)
 check = driver.find_element(By.ID, 'field_12_10')
 check.click()
 #submit= driver.find_element(By.ID, "gform_submit_button_12")
