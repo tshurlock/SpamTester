@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+import localValues
 
 
 proxies = ['189.240.60.168','172.183.241.1','189.240.60.163','221.140.235.236','203.205.9.105','85.111.60.196','221.140.235.237',
@@ -26,7 +27,7 @@ for i in range(0, len(proxies)):
         print("Proxy selected: {}".format(proxies[i]))
         options = webdriver.ChromeOptions()
         options.add_argument('--proxy-server={}'.format(proxies[i]))
-        driver = webdriver.Chrome(options=options, executable_path=r'C:\WebDrivers\chromedriver.exe')
+        driver = webdriver.Chrome(options=options, executable_path= localValues.chromedriverPath)
         driver.get("https://www.whatismyip.com/proxy-check/?iref=home")
         if "Proxy Type" in WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "p.card-text"))):
             break
