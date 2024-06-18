@@ -2,6 +2,8 @@
 
 import random
 
+# name data sourced from https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/names
+
 locations= ['Bath', 'Blackpool', 'Bristol', 'Cardiff', 'Cambridge', 'Canterbury', 'London',
            'Chelsea', 'Coventry', 'Devon', 'Edinburgh', 'Glasgow', 'Harrogate', 'Kensington', 'Kendal',
           'Leamington Spa', 'Leeds', 'Leicester', 'Liverpool', 'London', 'Manchester', 'Margate', 'Newcastle',

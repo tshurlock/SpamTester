@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-import localValues
+import localVariables
 import personClass
 
 
@@ -18,7 +18,7 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 driver = webdriver.Chrome(
-    service=  Service(localValues.chromedriverPath), 
+    service=  Service(localVariables.chromedriverPath), 
     options=options,
 )
 
@@ -26,7 +26,7 @@ p1 = personClass.random_person()
 print(p1)
 time.sleep(20)
 
-target = localValues.target
+target = localVariables.target
 
 #Open target page
 driver.get(target)
