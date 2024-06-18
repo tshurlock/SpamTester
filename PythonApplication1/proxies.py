@@ -25,11 +25,13 @@ import proxyGetter
            '45.5.92.94','185.64.208.184','195.138.73.54','20.42.119.47','146.56.154.83','80.66.81.39','103.208.27.214',
            '134.209.144.177','38.60.254.99',]'''
 
-print('new go')
-driver = webDriver.Chrome() 
-free_proxies = proxyGetter.get_free_proxies(driver)
-print(free_proxies)
-'''
+p1= proxyGetter.get_proxies()
+
+
+a1 = p1.get_free_proxies()
+proxies = p1.extract_ip_addresses(a1)
+print(proxies)
+
 for i in range(0, len(proxies)):
     try:
         print("Proxy selected: {}".format(proxies[i]))
@@ -39,10 +41,9 @@ for i in range(0, len(proxies)):
         options=options)
         driver = webdriver.Chrome(options=options, executable_path= localVariables.chromedriverPath)
         driver.get("https://www.whatismyip.com/proxy-check/?iref=home")
-        time.sleep(10)
+       
         if "Proxy Type" in WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "p.card-text"))):
             break
     except Exception:
         driver.quit()
 print("Proxy Invoked")
-'''

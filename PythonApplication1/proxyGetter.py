@@ -6,7 +6,7 @@ driver = webdriver.Chrome()
 
 
 
-class cheese:
+class get_proxies:
     def __init__(self) -> None:
         self.driver = webdriver.Chrome()
 
@@ -46,9 +46,12 @@ class cheese:
         return ip_addresses
 
 
-p1= cheese()
+'''
+for testing can remove
+p1= get_proxies()
 
 
 a1 = p1.get_free_proxies()
 b1 = p1.extract_ip_addresses(a1)
 print(b1)
+'''
