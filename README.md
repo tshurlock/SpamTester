@@ -13,7 +13,9 @@ Searches for a defined list of elements, therefore needs to be tailored to targe
 ## localVariables
 
 Not in repo (gitignore), you will need a local file localVaraibles.py that contains
+
 `target` = *your target URL*
+
 `chromedriverPath` = *path to chromedriver*
 
 ## detailsVar
